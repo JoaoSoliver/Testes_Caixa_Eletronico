@@ -3,6 +3,7 @@ package com.joaosoliver.iniciacao.sistBancario.teste;
 import java.util.Scanner;
 
 import com.joaosoliver.iniciacao.sistBancario.classes.Cliente;
+import com.joaosoliver.iniciacao.sistBancario.classes.Conta;
 import com.joaosoliver.iniciacao.sistBancario.classes.Operacoes;
 
 public class SistemaBancario {
@@ -16,17 +17,22 @@ public class SistemaBancario {
 		
 		Operacoes operacoesFinanceiras = new Operacoes();
 
-		Cliente c1 = new Cliente("Joe Hunter", "Corrente", 2500.97, 123456);
-		Cliente c2 = new Cliente("Hellen Vintage", "Poupança", 5200.05, 456789);
+		Cliente c1 = new Cliente("Joe Hunter", "123456");
+		Cliente c2 = new Cliente("Hellen Vintage","456789");
+		
+		Conta contaJoe = new Conta(c1, 25000);
+		Conta contaHellen = new Conta(c2, 15300);
 
-//		System.out.println(c1);
-//		System.out.println(c2);
+		System.out.println(contaJoe);
+		System.out.println(contaHellen);
 
 		System.out.println("\nBem vindo(a)");
-		System.out.println("\nSaldo atual: " + c1.getSaldo());
-		System.out.println("\nSaldo atual: " + c2.getSaldo());
+//		System.out.println("\nSaldo atual: " + c1.getSaldo());
+//		System.out.println("\nSaldo atual: " + c2.getSaldo());
 		
-		operacoesFinanceiras.depositar(123456, 10);
+//		operacoesFinanceiras.depositar(123456, 10);
+		
+//		System.out.println("\nSaldo atual: " + c1.getSaldo());
 		
 //		while (operacoes != 4) {
 //			System.out.println("\nComo posso ajudar?");
