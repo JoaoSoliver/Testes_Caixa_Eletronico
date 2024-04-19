@@ -27,6 +27,16 @@ public class SistemaBancario {
 		System.out.println(contaHellen);
 
 		System.out.println("\nBem vindo(a)");
+		
+		contaJoe.transferir(100, contaHellen);
+		
+		System.out.println(contaJoe);
+		System.out.println(contaHellen);
+		
+		contaJoe.transferirComNumeroConta(100, 456789);
+		
+		System.out.println(contaJoe);
+		System.out.println(contaHellen);
 //		System.out.println("\nSaldo atual: " + c1.getSaldo());
 //		System.out.println("\nSaldo atual: " + c2.getSaldo());
 		

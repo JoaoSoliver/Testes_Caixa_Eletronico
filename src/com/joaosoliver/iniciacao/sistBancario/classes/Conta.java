@@ -1,32 +1,47 @@
 package com.joaosoliver.iniciacao.sistBancario.classes;
 
 public class Conta {
-	
+
 	private Cliente cliente;
 	private String tipoDeConta;
 	private double saldo;
 	private int numeroDaConta;
-	
+
 	public Conta(Cliente cliente, double saldo) {
 		this.cliente = cliente;
 		this.saldo = saldo;
 	}
 
-	public void transferir(double valor) {		
-	if (valor <= this.saldo && valor > 0) {
-		this.saldo -= valor;	
-		System.out.println("Transferindo " + valor + " dinheiros");
-	} else if (valor < 0) {
-		System.out.println("Operação inválida...");
-	} else {
-		System.out.println("Saldo insuficiente para realizar essa transação");
+	public void transferir(double valor, Conta contaReceber) {		
+		if (valor <= this.saldo && valor > 0) {
+			this.saldo -= valor;	
+			contaReceber.saldo += valor;
+			System.out.println("Transferindo " + valor + " dinheiros");
+		} else if (valor < 0) {
+			System.out.println("Operação inválida...");
+		} else {
+			System.out.println("Saldo insuficiente para realizar essa transação");
+		}
 	}
-}
 	
+	public void transferirComNumeroConta(double valor, int numeroConta) {	
+		if (numeroConta == numeroConta) {			
+			if (valor <= this.saldo && valor > 0) {
+				this.saldo -= valor;
+//				Implementar forma da conta destino selecionada pelo número da conta receber o valor transferido. 
+				saldo += valor;
+				System.out.println("Transferindo " + valor + " dinheiros");
+			} else if (valor < 0) {
+				System.out.println("Operação inválida...");
+			} else {
+				System.out.println("Saldo insuficiente para realizar essa transação");
+			}
+		}
+	}
+
 	@Override
 	public String toString() {
-		return "Conta [cliente=" + cliente.getNome() + ", tipoDeConta=" + tipoDeConta + ", saldo=" + saldo + ", numeroDaConta="
-				+ numeroDaConta ;
+		return "Conta CLIENTE = " + cliente.getNome() + ", CPF = " + cliente.getCpf() + ", SALDO = " + saldo;
 	}
 
 	public String getTipoDeConta() {
